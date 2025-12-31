@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  --cor_principal: #050814;
+  --cor_secundaria: #141b3d;
+  --cor_brilho: #00b3ff;
+  --cor_fonte: #e6f1ff;
+  --tamanho_titulo: 35px;
+  --tamanho_texto: 18px;
+  --tamanho_header: 80px;
+  --box_max_width: 60%;
+}
+
+body,
+main {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+}
+
+main {
+  margin-top: var(--tamanho_header);
+  background-color: var(--cor_principal);
+  width: 100%;
+  min-height: 120vh;
+  gap: 30px;
+  padding: 50px;
+  text-align: center;
+  z-index: 0;
+}
+
+header {
+  width: 100%;
+  height: var(--tamanho_header);
+  background-color: var(--cor_brilho);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 1;
+}
+
+.box_1,
+.box_2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: justify;
+}
+
+.box_1,
+.box_2 {
+  background-color: var(--cor_secundaria);
+  max-width: var(--box_max_width);
+  transition: transform 0.3s ease;
+}
+
+.box_1 {
+  padding: 20px;
+  box-shadow: 0 0 12px var(--cor_brilho);
+  border-radius: 3px;
+}
+
+.box_1:hover {
+  transform: translateY(-5px);
+}
+
+.box_2 {
+  padding: 25px;
+  border-radius: 15px;
+}
+
+.box_2:hover {
+  transform: scale(1.01);
+}
+
+.text,
+.box_1,
+.box_2,
+button {
+  color: var(--cor_fonte);
+  font-size: var(--tamanho_texto);
+  user-select: none;
+}
+
+.title {
+  color: var(--cor_fonte);
+  text-shadow: 0 0 5px var(--cor_brilho);
+  font-size: var(--tamanho_titulo);
+  user-select: none;
+}
+
+.text {
+  text-shadow: 0 0 5px var(--cor_brilho);
+  font-size: var(--tamanho_texto);
+}
+
+.button {
+  background-color: var(--cor_brilho);
+  border-radius: 15px;
+  padding: 17px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0 0 5px var(--cor_brilho);
+  transition: transform 0.2s ease;
+}
+
+.button:hover {
+  transform: scale(1.05);
+}
+
+.button:active {
+  transform: scale(0.95);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --cor_principal: #eef2ff;
+    --cor_secundaria: #f8faff;
+    --cor_brilho: #a3bffa;
+    --cor_sombra: #dbe4ff;
+    --cor_fonte: #0f172a;
+  }
+}
+
+@media (max-width: 800px) {
+  :root {
+    --tamanho_titulo: 25px;
+    --tamanho_texto: 15px;
+    --tamanho_header: 90px;
+    --box_max_width: 90%;
+  }
+
+  main {
+    padding: 15px;
+  }
+}
